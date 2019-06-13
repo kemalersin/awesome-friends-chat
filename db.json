@@ -1,158 +1,158 @@
 {
-    "contacts": [
+  "contacts": [
+    {
+      "id": 1,
+      "avatar": "https://res.cloudinary.com/de2ljvtxn/image/upload/v1560259747/test/avatar/rachel-green-1.jpg",
+      "name": "Rachel Green",
+      "status": "online",
+      "statusText": "Greens do not quit!",
+      "lastMessage": {
+        "time": "1560417150",
+        "text": "I'm an assistant buyer!"
+      }
+    },
+    {
+      "id": 2,
+      "avatar": "https://res.cloudinary.com/de2ljvtxn/image/upload/v1560259747/test/avatar/monica-geller-1.jpg",
+      "name": "Monica Geller",
+      "status": "offline",
+      "statusText": "You don't tell me what to do.",
+      "lastMessage": {
+        "time": "1560370330",
+        "text": "I tell you what to do."
+      }
+    },
+    {
+      "id": 3,
+      "avatar": "https://res.cloudinary.com/de2ljvtxn/image/upload/v1560260218/test/avatar/phoebe-buffay-1.jpg",
+      "name": "Phoebe Buffay",
+      "status": "online",
+      "statusText": "I don't even have a \"pla\".",
+      "lastMessage": {
+        "time": "1560410420",
+        "text": "Thank you, my babies."
+      }
+    },
+    {
+      "id": 4,
+      "avatar": "https://res.cloudinary.com/de2ljvtxn/image/upload/v1560260376/test/avatar/joey-tribbiani-1.jpg",
+      "name": "Joey Tribbiani",
+      "status": "online",
+      "statusText": "How you doin'?",
+      "lastMessage": {
+        "time": "1560062150",
+        "text": "Bert! Bert! Bert!"
+      }
+    },
+    {
+      "id": 5,
+      "avatar": "https://res.cloudinary.com/de2ljvtxn/image/upload/v1560260637/test/avatar/chandler-bing-1.jpg",
+      "name": "Chandler Bing",
+      "status": "offline",
+      "statusText": "I am not \"blah\", I am a hoot!"
+    },
+    {
+      "id": 6,
+      "avatar": "https://res.cloudinary.com/de2ljvtxn/image/upload/v1560260993/test/avatar/ross-geller-1.jpg",
+      "name": "Dr. Ross Geller",
+      "status": "online",
+      "statusText": "I'm fine!",
+      "lastMessage": {
+        "time": "1560418230",
+        "text": "We were on a break!"
+      }
+    }
+  ],
+  "conversations": [
+    {
+      "contact": 1,
+      "messages": [
         {
-            "id": 1,
-            "avatar": "https://res.cloudinary.com/de2ljvtxn/image/upload/v1560259747/test/avatar/rachel-green-1.jpg",
-            "name": "Rachel Green",
-            "status": "online",
-            "statusText": "Greens do not quit!",
-            "lastMessage": {
-              "time": "1560417150",
-              "text": "I'm an assistant buyer!"                
-            }        
+          "type": 1,
+          "time": "1560417030",
+          "text": "Greens do not quit!"
         },
         {
-            "id": 2,
-            "avatar": "https://res.cloudinary.com/de2ljvtxn/image/upload/v1560259747/test/avatar/monica-geller-1.jpg",
-            "name": "Monica Geller",
-            "status": "offline",
-            "statusText": "You don't tell me what to do.",
-            "lastMessage": {
-              "time": "1560370330",
-              "text": "I tell you what to do."                
-            }          
-        },
-        {
-            "id": 3,
-            "avatar": "https://res.cloudinary.com/de2ljvtxn/image/upload/v1560260218/test/avatar/phoebe-buffay-1.jpg",
-            "name": "Phoebe Buffay",
-            "status": "online",
-            "statusText": "I don't even have a \"pla\".",
-            "lastMessage": {
-              "time": "1560410420",
-              "text": "Thank you, my babies."                
-            }          
-        },
-        {
-            "id": 4,
-            "avatar": "https://res.cloudinary.com/de2ljvtxn/image/upload/v1560260376/test/avatar/joey-tribbiani-1.jpg",
-            "name": "Joey Tribbiani",
-            "status": "online",
-            "statusText": "How you doin'?",
-            "lastMessage": {
-              "time": "1560062150",
-              "text": "Bert! Bert! Bert!"                
-            }       
-        },
-        {
-            "id": 5,
-            "avatar": "https://res.cloudinary.com/de2ljvtxn/image/upload/v1560260637/test/avatar/chandler-bing-1.jpg",
-            "name": "Chandler Bing",
-            "status": "offline",
-            "statusText": "I am not \"blah\", I am a hoot!"
-        },
-        {
-            "id": 6,
-            "avatar": "https://res.cloudinary.com/de2ljvtxn/image/upload/v1560260993/test/avatar/ross-geller-1.jpg",
-            "name": "Dr. Ross Geller",
-            "status": "online",
-            "statusText": "I'm fine!",
-            "lastMessage": {
-              "time": "1560418230",
-              "text": "We were on a break!"                
-            } 
+          "type": 1,
+          "time": "1560417150",
+          "text": "I'm an assistant buyer!"
         }
-    ],
-    "history": [
+      ]
+    },
+    {
+      "contact": 2,
+      "messages": [
         {
-            "contact": 1,
-            "messages": [
-                {
-                    "type": 1,
-                    "time": "1560417030",
-                    "text": "Greens do not quit!"
-                },
-                {
-                    "type": 1,
-                    "time": "1560417150",
-                    "text": "I'm an assistant buyer!"
-                }                
-            ]
+          "type": 1,
+          "time": "1560370330",
+          "text": "You don't tell me what to do."
         },
         {
-            "contact": 2,
-            "messages": [
-                {
-                    "type": 1,
-                    "time": "1560370330",
-                    "text": "You don't tell me what to do."
-                },
-                {
-                    "type": 1,
-                    "time": "1560370330",
-                    "text": "I tell you what to do."
-                }                
-            ]
+          "type": 1,
+          "time": "1560370330",
+          "text": "I tell you what to do."
+        }
+      ]
+    },
+    {
+      "contact": 3,
+      "messages": [
+        {
+          "type": 1,
+          "time": "1560410120",
+          "text": "I don't even have a \"pla\"."
         },
         {
-            "contact": 3,
-            "messages": [
-                {
-                    "type": 1,
-                    "time": "1560410120",
-                    "text": "I don't even have a \"pla\"."
-                },
-                {
-                    "type": 1,
-                    "time": "1560410420",
-                    "text": "Thank you, my babies."
-                }                
-            ]
+          "type": 1,
+          "time": "1560410420",
+          "text": "Thank you, my babies."
+        }
+      ]
+    },
+    {
+      "contact": 4,
+      "messages": [
+        {
+          "type": 1,
+          "time": "1560060030",
+          "text": "How you doin'?"
         },
         {
-            "contact": 4,
-            "messages": [
-                {
-                    "type": 1,
-                    "time": "1560060030",
-                    "text": "How you doin'?"
-                },
-                {
-                    "type": 2,
-                    "time": "1560061810",
-                    "text": "I am doing nothing man!"
-                },
-                {
-                    "type": 2,
-                    "time": "1560062110",
-                    "text": "It's a Sunday. I don't move on Sundays."
-                },
-                {
-                    "type": 1,
-                    "time": "1560062150",
-                    "text": "Bert! Bert! Bert!"
-                },
-                {
-                    "type": 2,
-                    "time": "1560062435",
-                    "text": "Thank you Joey! See ya!"
-                }                
-            ]
+          "type": 2,
+          "time": "1560061810",
+          "text": "I am doing nothing man!"
         },
         {
-            "contact": 6,
-            "messages": [
-                {
-                    "type": 1,
-                    "time": "1560414630",
-                    "text": "I'm fine!"
-                },
-                {
-                    "type": 1,
-                    "time": "1560418230",
-                    "text": "We were on a break!"
-                }                
-            ]
-        }                      
-    ]
+          "type": 2,
+          "time": "1560062110",
+          "text": "It's a Sunday. I don't move on Sundays."
+        },
+        {
+          "type": 1,
+          "time": "1560062150",
+          "text": "Bert! Bert! Bert!"
+        },
+        {
+          "type": 2,
+          "time": "1560062435",
+          "text": "Thank you Joey! See ya!"
+        }
+      ]
+    },
+    {
+      "contact": 6,
+      "messages": [
+        {
+          "type": 1,
+          "time": "1560414630",
+          "text": "I'm fine!"
+        },
+        {
+          "type": 1,
+          "time": "1560418230",
+          "text": "We were on a break!"
+        }
+      ]
+    }
+  ]
 }
