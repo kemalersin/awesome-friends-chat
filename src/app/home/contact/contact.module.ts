@@ -7,13 +7,8 @@ import { ContactComponent } from './contact.component';
 
 @NgModule({
   declarations: [ContactComponent],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    MomentModule
-  ],
+  imports: [BrowserModule, FormsModule, MomentModule],
   exports: [ContactComponent],
   providers: []
 })
-
 export class ContactModule {}

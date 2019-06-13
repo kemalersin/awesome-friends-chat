@@ -4,49 +4,11 @@
       <!--sidebar section-->
       <div class="col-12 col-md-4 col-lg-3 side">
         <app-sidebar></app-sidebar>
-      </div>      
+      </div>
 
       <!--main chat section-->
       <div class="col-12 col-md-8 col-lg-9 conversation">
-        <!--header section-->
-        <div class="row heading heading-container">
-          <div class="col-xs-12 col-sm-6">
-            <div class="heading-contact-container">
-              <div class="heading-avatar">
-                <div class="heading-avatar-icon">
-                  <img
-                    src="https://res.cloudinary.com/de2ljvtxn/image/upload/v1560260376/test/avatar/joey-tribbiani-1.jpg"
-                  />
-                </div>
-              </div>
-              <div class="heading-name">
-                <a class="heading-name-details">Joey Tribbiani </a>
-              </div>
-            </div>
-          </div>
-          <!--Logo-->
-          <div class="col-sm-6 d-none d-sm-block">
-            <img src="/assets/logo.png" height="28px" />
-          </div>
-        </div>
-
-        <!--messages section-->
-        <div class="row message" id="conversation">
-          <div class="col-12 col-md-12 h-auto"></div>
-        </div>
-
-        <!--reply section-->
-        <div class="row reply">
-          <div class="col-1 col-sm-1 paperClip">
-            <fa-icon [icon]="faPaperClip" class="faIcon"></fa-icon>
-          </div>
-          <div class="col-8 col-sm-9 reply-main">
-            <textarea class="form-control" rows="1" id="comment" placeholder="write a message..."></textarea>
-          </div>
-          <div class="col-3 col-sm-2 reply-send">
-            <button type="button" class="btn btn-info btn-send">Send</button>
-          </div>
-        </div>
+        <app-chat></app-chat>
       </div>
     </div>
   </div>

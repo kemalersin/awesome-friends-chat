@@ -7,5 +7,5 @@ export interface IContact {
   lastMessage: {
     time: number;
     text: string;
-  }  
+  };
 }

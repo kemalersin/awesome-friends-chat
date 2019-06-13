@@ -21,7 +21,7 @@ export class ContactService {
       .get(routes.contacts())
       .pipe(
         map((contacts: any) => contacts),
-        catchError(() => of('Error, could not load contacts.'))
+        catchError(() => of('Could not load contacts.'))
       );
   }
 }

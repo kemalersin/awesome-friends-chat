@@ -6,7 +6,6 @@ import { faCog, faPaperclip, faCommentAlt, faUser, faInfoCircle } from '@fortawe
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-
 export class HomeComponent implements OnInit {
   faSettings = faCog;
   faPaperClip = faPaperclip;

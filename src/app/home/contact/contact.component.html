@@ -1,17 +1,24 @@
 <input id="searchInput" type="text" [(ngModel)]="filter" placeholder="Search..." class="sideBar-search" />
 
-<div class="row sideBar-body" *ngFor="let contact of filteredContacts">
+<div
+  class="row sideBar-body"
+  [ngClass]="{ active: selectedContact && contact.id == selectedContact.id }"
+  *ngFor="let contact of filteredContacts"
+  (click)="startConversation($event, contact)"
+>
   <div class="col-12 col-md-12">
     <div class="row time-container" *ngIf="inConversation">
       <div class="col-12 col-md-12 float-right sideBar-time">
         <span class="time-meta float-right">{{
-          (contact.lastMessage.time | amFromUnix) |
-          amCalendar: {
-            sameDay: 'h:mm A',
-            lastDay: '[Yesterday]',
-            lastWeek: 'M/D/Y',
-            sameElse: 'M/D/Y'
-          }
+          contact.lastMessage.time
+            | amFromUnix
+            | amCalendar
+              : {
+                  sameDay: 'h:mm A',
+                  lastDay: '[Yesterday]',
+                  lastWeek: 'M/D/Y',
+                  sameElse: 'M/D/Y'
+                }
         }}</span>
       </div>
     </div>
