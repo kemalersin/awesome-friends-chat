@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { extract } from '@app/core';
 import { HomeComponent } from './home.component';
-import { Shell } from '@app/shell/shell.service';
 
-const routes: Routes = [Shell.childRoutes([{ path: '', component: HomeComponent }])];
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  }
+];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   providers: []
 })
