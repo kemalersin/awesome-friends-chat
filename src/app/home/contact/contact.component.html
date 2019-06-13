@@ -26,7 +26,7 @@
       <div class="col-2 col-sm-3 sideBar-avatar">
         <div class="avatar-icon">
           <img [src]="contact.avatar" />
-          <span class="status status-{{ contact.status }}"></span>
+          <span *ngIf="inConversation" class="status status-{{ contact.status }}"></span>
         </div>
       </div>
       <div class="col-10 col-sm-9 sideBar-main">
