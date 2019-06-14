@@ -66,6 +66,13 @@
         "time": "1560418230",
         "text": "We were on a break!"
       }
+    },
+    {
+      "id": 7,
+      "avatar": "https://res.cloudinary.com/de2ljvtxn/image/upload/v1560513109/test/avatar/gunther-1.jpg",
+      "name": "Gunther",
+      "status": "offline",
+      "statusText": "Yeah, whatever."
     }
   ],
   "conversations": [

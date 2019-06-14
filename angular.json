@@ -29,7 +29,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/main.scss"
+              "src/main.scss",
+              "./node_modules/animate.css/animate.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.slim.min.js",

@@ -12,6 +12,7 @@ const routes = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class ContactService {
   constructor(private httpClient: HttpClient) {}
 

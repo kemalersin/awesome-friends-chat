@@ -26,11 +26,7 @@ export class SideBarComponent implements OnInit {
 
     this.contactService
       .getContacts()
-      .pipe(
-        finalize(() => {
-          this.isLoading = false;
-        })
-      )
+      .pipe(finalize(() => (this.isLoading = false)))
       .subscribe((contacts: IContact[]) => {
         this.contacts = contacts;
       });
