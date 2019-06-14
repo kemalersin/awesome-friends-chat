@@ -6,6 +6,7 @@
       "name": "Rachel Green",
       "status": "online",
       "statusText": "Greens do not quit!",
+      "conversationId": 1,
       "lastMessage": {
         "time": "1560417150",
         "text": "I'm an assistant buyer!"
@@ -17,6 +18,7 @@
       "name": "Monica Geller",
       "status": "offline",
       "statusText": "You don't tell me what to do.",
+      "conversationId": 2,
       "lastMessage": {
         "time": "1560370330",
         "text": "I tell you what to do."
@@ -28,6 +30,7 @@
       "name": "Phoebe Buffay",
       "status": "online",
       "statusText": "I don't even have a \"pla\".",
+      "conversationId": 3,
       "lastMessage": {
         "time": "1560410420",
         "text": "Thank you, my babies."
@@ -39,6 +42,7 @@
       "name": "Joey Tribbiani",
       "status": "online",
       "statusText": "How you doin'?",
+      "conversationId": 4,
       "lastMessage": {
         "time": "1560062150",
         "text": "Bert! Bert! Bert!"
@@ -57,6 +61,7 @@
       "name": "Dr. Ross Geller",
       "status": "online",
       "statusText": "I'm fine!",
+      "conversationId": 5,
       "lastMessage": {
         "time": "1560418230",
         "text": "We were on a break!"
@@ -65,7 +70,7 @@
   ],
   "conversations": [
     {
-      "contact": 1,
+      "id": 1,
       "messages": [
         {
           "type": 1,
@@ -80,7 +85,7 @@
       ]
     },
     {
-      "contact": 2,
+      "id": 2,
       "messages": [
         {
           "type": 1,
@@ -95,7 +100,7 @@
       ]
     },
     {
-      "contact": 3,
+      "id": 3,
       "messages": [
         {
           "type": 1,
@@ -110,7 +115,7 @@
       ]
     },
     {
-      "contact": 4,
+      "id": 4,
       "messages": [
         {
           "type": 1,
@@ -140,7 +145,7 @@
       ]
     },
     {
-      "contact": 6,
+      "id": 5,
       "messages": [
         {
           "type": 1,

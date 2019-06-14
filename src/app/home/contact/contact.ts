@@ -4,6 +4,7 @@ export interface IContact {
   name: string;
   status: string;
   statusText: string;
+  conversationId: number;
   lastMessage: {
     time: number;
     text: string;
