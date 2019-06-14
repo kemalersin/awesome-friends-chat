@@ -1,7 +1,7 @@
 {
   "APP_NAME": "Awesome Friends Chat",
-  "About": "About",
-  "Hello world !": "Hello world !",
-  "Home": "Home",
-  "Version": "Version"
+  "Language": "Language",
+  "Search": "Search...",
+  "Message": "write a message...",
+  "Send": "Send"
 }

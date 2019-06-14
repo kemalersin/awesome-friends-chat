@@ -1,11 +1,9 @@
 <div class="side-mainArea">
   <div class="row heading"></div>
 
-  <!--navigation buttons-->
   <div class="row tabsContainer">
     <div class="col-sm-12 tabsContainer-inner">
       <div class="form-group has-feedback">
-        <!-- Nav tabs -->
         <ul class="nav nav-tabs tabs-container">
           <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#chat">
@@ -27,7 +25,6 @@
     </div>
   </div>
 
-  <!--contacts section-->
   <div class="tab-content" id="sideBar">
     <div class="tab-pane active" id="chat">
       <app-loader [isLoading]="isLoading"></app-loader>
@@ -37,7 +34,7 @@
       <app-contact [contacts]="contacts"></app-contact>
     </div>
     <div class="tab-pane fade" id="settings">
-      <!--settings component-->
+      <app-settings></app-settings>
     </div>
   </div>
 </div>

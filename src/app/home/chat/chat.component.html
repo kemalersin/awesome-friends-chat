@@ -59,11 +59,11 @@
       <fa-icon [icon]="faPaperClip" class="faIcon"></fa-icon>
     </div>
     <div class="col-8 col-sm-9 reply-main">
-      <input type="text" name="message" class="form-control" [(ngModel)]="messageBody" placeholder="write a message..."
+      <input type="text" name="message" class="form-control" [(ngModel)]="messageBody" placeholder="{{'Message' | translate}}"
         autocomplete="off" [readonly]="isLoading || !contact">
     </div>
     <div class="col-3 col-sm-2 reply-send">
-      <button type="submit" class="btn btn-info btn-send" [disabled]="isLoading || !contact">Send</button>
+      <button type="submit" class="btn btn-info btn-send" [disabled]="isLoading || !contact" translate>Send</button>
     </div>
   </div>
 </form>

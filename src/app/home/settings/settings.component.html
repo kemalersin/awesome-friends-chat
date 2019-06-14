@@ -1,0 +1,11 @@
+ <div class="p-3">
+   <span class="d-block pb-1">Language</span>
+   <div ngbDropdown>
+     <button id="language-dropdown" ngbDropdownToggle class="btn btn-outline-primary">{{currentLanguage}}</button>
+     <div ngbDropdownMenu aria-labelledby="language-dropdown">
+       <button ngbDropdownItem class="dropdown-item" *ngFor="let language of languages" (click)="setLanguage(language)">
+         {{language}}
+       </button>
+     </div>
+   </div>
+ </div>
