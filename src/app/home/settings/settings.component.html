@@ -1,6 +1,6 @@
  <div class="p-3">
-   <span class="d-block pb-1">Language</span>
-   <div ngbDropdown>
+   <span class="d-block pb-2" translate>Language</span>
+   <div class="pb-4" ngbDropdown>
      <button id="language-dropdown" ngbDropdownToggle class="btn btn-outline-primary">{{currentLanguage}}</button>
      <div ngbDropdownMenu aria-labelledby="language-dropdown">
        <button ngbDropdownItem class="dropdown-item" *ngFor="let language of languages" (click)="setLanguage(language)">
@@ -8,4 +8,8 @@
        </button>
      </div>
    </div>
+   <span class="d-block pb-2" translate>Update frequency</span>
+   <div class="slidecontainer">
+      <input type="range" min="1" max="10" value="3" class="slider">
+    </div>
  </div>
