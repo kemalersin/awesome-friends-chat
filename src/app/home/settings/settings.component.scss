@@ -1,6 +1,15 @@
 $color_bon_jour_approx: #e2e2e2;
 $color_science_blue_approx: #0073dd;
 
+* {
+  font-size: 14px;
+}
+
+span {
+  font-weight: 400;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
 .slidecontainer {
   width: 100%;
 }
