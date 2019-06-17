@@ -1,8 +1,9 @@
-![Awesome Friends Chat](https://res.cloudinary.com/de2ljvtxn/image/upload/v1560790324/test/logo.png 'Awesome Friends Chat')
+![Awesome Friends Chat](https://res.cloudinary.com/de2ljvtxn/image/upload/c_limit,h_250,w_250/v1560790324/test/logo.png 'Awesome Friends Chat')
 
 # Awesome Friends Chat
 
 **Online Demo:** http://awesome-friends-chat.firebaseapp.com
+
 **API:** https://my-json-server.typicode.com/kemalersin/awesome-friends-chat
 
 Inspired from [Angular-Chat-App](https://github.com/Dewiidar/Angular-Chat-App)
