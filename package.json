@@ -15,7 +15,8 @@
     "prettier": "prettier --write \"./{src,e2e}/**/*.{ts,js,html,scss}\"",
     "prettier:check": "prettier --list-different \"./{src,e2e}/**/*.{ts,js,html,scss}\"",
     "postinstall": "npm run prettier -s",
-    "generate": "ng generate"
+    "generate": "ng generate",
+    "deploy": "npm run build -s && firebase deploy"
   },
   "dependencies": {
     "@angular/animations": "^7.2.3",
