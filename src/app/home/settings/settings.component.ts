@@ -24,5 +24,5 @@ export class SettingsComponent {
     this.i18nService.language = language;
   }
 
-  constructor(private i18nService: I18nService, private contactService: ContactService) {}
+  constructor(private i18nService: I18nService, public contactService: ContactService) {}
 }
