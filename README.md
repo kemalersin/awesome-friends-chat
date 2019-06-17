@@ -6,6 +6,8 @@
 
 **API:** https://my-json-server.typicode.com/kemalersin/awesome-friends-chat
 
+<br>
+
 Inspired from [Angular-Chat-App](https://github.com/Dewiidar/Angular-Chat-App)
 
 This project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/)

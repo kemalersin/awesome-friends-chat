@@ -13,7 +13,15 @@
     <input type="range" name="updateFrequency" min="1" max="10" value="3" class="slider" />
   </div>
   <div class="custom-control custom-checkbox mb-4">
-    <input type="checkbox" id="offlineUsers" name="showOfflineUSers" class="custom-control-input" checked />
+    <input
+      type="checkbox"
+      id="offlineUsers"
+      name="showOfflineUSers"
+      class="custom-control-input"
+      [(ngModel)]="showOfflineUsers"
+      (ngModelChange)="contactService.changeOfflineMode(showOfflineUsers)"
+      checked
+    />
     <label class="custom-control-label" for="offlineUsers">
       <span translate>Show offline users</span>
     </label>

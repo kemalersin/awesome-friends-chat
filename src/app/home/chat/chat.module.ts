@@ -1,28 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import { MomentModule } from 'ngx-moment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { SharedModule } from '@app/shared';
 import { ChatComponent } from './chat.component';
-import { ProfileComponent } from '../profile/profile.component';
+import { ProfileModule } from '../profile/profile.module';
 
 @NgModule({
-  declarations: [ChatComponent, ProfileComponent],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    TranslateModule,
-    FontAwesomeModule,
-    MomentModule,
-    SharedModule,
-    NgbModule.forRoot()
-  ],
+  declarations: [ChatComponent],
+  imports: [BrowserModule, FormsModule, TranslateModule, FontAwesomeModule, MomentModule, SharedModule, ProfileModule],
   exports: [ChatComponent],
-  providers: [NgbActiveModal],
-  entryComponents: [ProfileComponent]
+  providers: []
 })
 export class ChatModule {}

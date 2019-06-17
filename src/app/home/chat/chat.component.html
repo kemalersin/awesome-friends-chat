@@ -1,7 +1,6 @@
-<!--header section-->
 <div class="row heading heading-container">
   <div class="col-xs-12 col-sm-6">
-    <div class="heading-contact-container" *ngIf="contact" (click)="showProfile()">
+    <div class="heading-contact-container" *ngIf="contact" (click)="profileService.showProfile(contact)">
       <div class="heading-avatar">
         <div class="heading-avatar-icon">
           <img [src]="contact.avatar" />
@@ -12,17 +11,17 @@
       </div>
     </div>
   </div>
-  <!--Logo-->
   <div class="col-sm-6 d-none d-sm-block">
-    <img
-      class="float-right"
-      src="https://res.cloudinary.com/de2ljvtxn/image/upload/v1560790324/test/logo.png"
-      height="28px"
-    />
+    <a href="https://github.com/kemalersin/awesome-friends-chat" target="_blank">
+      <img
+        class="float-right"
+        src="https://res.cloudinary.com/de2ljvtxn/image/upload/v1560790324/test/logo.png"
+        alt="Awesome Friends Chat"
+        height="28px"
+      />
+    </a>
   </div>
 </div>
-
-<!--messages section-->
 <div id="conversation" class="row message" #scrollMe [scrollTop]="scrollMe.scrollHeight">
   <div class="col-12 col-md-12 h-auto">
     <app-loader [isLoading]="isLoading"></app-loader>
@@ -55,8 +54,6 @@
     </div>
   </div>
 </div>
-
-<!--reply section-->
 <form name="reply" autocomplete="off" (ngSubmit)="sendMessage()">
   <div class="row reply">
     <div class="col-1 col-sm-1 paperClip">

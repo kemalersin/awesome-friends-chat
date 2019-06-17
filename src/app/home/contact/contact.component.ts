@@ -1,8 +1,10 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { has, head, includes, lowerCase } from 'lodash';
+import { has, includes, lowerCase } from 'lodash';
 
 import { IContact } from './contact';
+import { ContactService } from './contact.service';
 import { ChatService } from '../chat/chat.service';
+import { ProfileService } from '../profile/profile.service';
 
 @Component({
   selector: 'app-contact',
@@ -12,6 +14,8 @@ import { ChatService } from '../chat/chat.service';
 export class ContactComponent {
   @Input() contacts: IContact[];
   @Input() inConversation: boolean;
+
+  showOfflineUsers: boolean = true;
 
   selectedContact: IContact;
   filteredContacts: IContact[];
@@ -27,9 +31,13 @@ export class ContactComponent {
     this.filteredContacts = this._filter ? this.performFilter(this._filter) : this.contacts;
   }
 
-  constructor(private chatService: ChatService) {}
+  constructor(
+    private contactService: ContactService,
+    private chatService: ChatService,
+    private profileService: ProfileService
+  ) {}
 
-  public startConversation(event: any, contact: IContact): void {
+  public startConversation(contact: IContact): void {
     this.selectedContact = contact;
     this.chatService.selectContact(contact);
   }
@@ -38,6 +46,10 @@ export class ContactComponent {
     filterBy = lowerCase(filterBy);
 
     return this.contacts.filter((contact: IContact) => includes(lowerCase(contact.name), filterBy));
+  }
+
+  ngOnInit() {
+    this.contactService.getOfflineMode().subscribe(showOfflineUsers => (this.showOfflineUsers = showOfflineUsers));
   }
 
   ngOnChanges(changes: SimpleChanges): void {

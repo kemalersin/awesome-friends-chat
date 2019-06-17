@@ -18,15 +18,15 @@ export class ChatService {
 
   constructor(private httpClient: HttpClient) {}
 
-  selectContact(contact: IContact) {
+  public selectContact(contact: IContact) {
     this.contactEmitter.emit(contact);
   }
 
-  getContact(): Observable<IContact> {
+  public getContact(): Observable<IContact> {
     return this.contactEmitter;
   }
 
-  getConversation(id: number): Observable<IConversation> {
+  public getConversation(id: number): Observable<IConversation> {
     return this.httpClient
       .cache()
       .get(routes.conversation(id))

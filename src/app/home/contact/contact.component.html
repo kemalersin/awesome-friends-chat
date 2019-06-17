@@ -10,7 +10,8 @@
   class="row contact-body"
   [ngClass]="{ active: selectedContact && contact.id == selectedContact.id }"
   *ngFor="let contact of filteredContacts"
-  (click)="startConversation($event, contact)"
+  [hidden]="inConversation && contact.status == 'offline' && !showOfflineUsers"
+  (click)="inConversation ? startConversation(contact) : profileService.showProfile(contact)"
 >
   <div class="col-12 col-md-12">
     <div class="row time-container" *ngIf="inConversation">
