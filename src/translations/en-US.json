@@ -4,5 +4,10 @@
   "Update frequency": "Update frequency",
   "Search": "Search...",
   "Message": "write a message...",
-  "Send": "Send"
+  "Send": "Send",
+  "Show offline users in panel": "Show offline users in panel",
+  "Chat backup": "Chat backup",
+  "Daily": "Daily",
+  "Weekly": "Weekly",
+  "Monthly": "Monthly"
 }

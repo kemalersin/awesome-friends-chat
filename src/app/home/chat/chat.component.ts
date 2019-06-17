@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { finalize } from 'rxjs/operators';
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,6 +10,7 @@ import { ChatService } from './chat.service';
 
 import { IMessage } from './conversation';
 import { IConversation } from './conversation';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-chat',
@@ -24,7 +26,12 @@ export class ChatComponent implements OnInit {
 
   faPaperClip = faPaperclip;
 
-  constructor(private chatService: ChatService) {}
+  constructor(private chatService: ChatService, private modalService: NgbModal) {}
+
+  public showProfile() {
+    const modalRef = this.modalService.open(ProfileComponent, {windowClass: 'animated jackInTheBox fast', centered: true});
+    modalRef.componentInstance.contact = this.contact;
+  }
 
   public sendMessage() {
     const message: IMessage = {

@@ -1,14 +1,14 @@
-<input id="searchInput" type="text" [(ngModel)]="filter" placeholder="{{'Search' | translate}}" class="sideBar-search" />
+<input id="searchInput" type="text" [(ngModel)]="filter" placeholder="{{'Search' | translate}}" class="contact-search" />
 
 <div
-  class="row sideBar-body"
+  class="row contact-body"
   [ngClass]="{ active: selectedContact && contact.id == selectedContact.id }"
   *ngFor="let contact of filteredContacts"
   (click)="startConversation($event, contact)"
 >
   <div class="col-12 col-md-12">
     <div class="row time-container" *ngIf="inConversation">
-      <div class="col-12 col-md-12 float-right sideBar-time">
+      <div class="col-12 col-md-12 float-right contact-time">
         <span class="time-meta float-right">{{
           contact.lastMessage.time
             | amFromUnix
@@ -23,15 +23,15 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-2 col-sm-3 sideBar-avatar">
+      <div class="col-2 col-sm-3 contact-avatar">
         <div class="avatar-icon">
           <img [src]="contact.avatar" />
           <span *ngIf="inConversation" class="status status-{{ contact.status }}"></span>
         </div>
       </div>
-      <div class="col-10 col-sm-9 sideBar-main">
+      <div class="col-10 col-sm-9 contact-main">
         <div class="row">
-          <div class="col-sm-12 col-xs-12 sideBar-name">
+          <div class="col-sm-12 col-xs-12 contact-info">
             <span class="name-meta contact-name">
               {{ contact.name }}
             </span>

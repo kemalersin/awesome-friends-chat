@@ -1,14 +1,14 @@
 <!--header section-->
 <div class="row heading heading-container">
   <div class="col-xs-12 col-sm-6">
-    <div class="heading-contact-container" *ngIf="contact">
+    <div class="heading-contact-container" *ngIf="contact" (click)="showProfile()">
       <div class="heading-avatar">
         <div class="heading-avatar-icon">
           <img [src]="contact.avatar" />
         </div>
       </div>
       <div class="heading-name">
-        <a class="heading-name-details">{{ contact.name }} </a>
+        <a class="heading-name-details">{{ contact.name }}</a>
       </div>
     </div>
   </div>

@@ -1,0 +1,44 @@
+$color_fern_approx: #63bc67;
+$color_red_orange_approx: #f44336;
+
+fa-icon {
+  cursor: pointer;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-body {
+  margin-bottom: 40px;
+}
+
+.avatar {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 120px;
+  height: 120px;   
+
+  img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .status {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+
+  .status-online {
+    background-color: $color_fern_approx;
+  }
+
+  .status-offline {
+    background-color: $color_red_orange_approx;
+  }
+}

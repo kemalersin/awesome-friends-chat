@@ -4,5 +4,10 @@
   "Update frequency": "Güncelleme sıklığı",  
   "Search": "Ara...",
   "Message": "bir mesaj yaz...",
-  "Send": "Gönder"
+  "Send": "Gönder",
+  "Show offline users in panel": "Çevrimdışı kullanıcıları göster",
+  "Chat backup": "Sohbet yedeği",
+  "Daily": "Günlük",
+  "Weekly": "Haftalık",
+  "Monthly": "Aylık"
 }

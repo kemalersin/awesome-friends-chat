@@ -1,46 +1,6 @@
-//colors
-$black_75: rgba(0, 0, 0, 0.75);
-$color_black_haze_approx: #f7f7f7;
-$color_gallery_approx: #eee;
-$color_bon_jour_approx: #e2e2e2;
-$color_pumice_approx: #c6c6c6;
-$color_nobel_approx: #b4b4b4;
-$white: white;
-$color_smalt_blue_approx: #607d8b;
-$black_8: rgba(0, 0, 0, 0.08);
-$color_mountain_mist_approx: #93918f;
-$color_scarpa_flow_approx: #4d6069;
-
-//@extend-elements
-//original selectors
-//html, body, div, span
-%extend {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  //Instead of the line below you could use @include box-sizing($bs)
-  box-sizing: border-box;
-  font-size: 1em;
-}
-
-html {
-  @extend %extend;
-}
-
-body {
-  @extend %extend;
-}
-
-div {
-  @extend %extend;
-}
-
-span {
-  @extend %extend;
-}
+$box_shadow: 0 13px 40px -13px rgba(0, 0, 0, 0.75);
 
 * {
-  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
   transition: 0.2s ease-in-out;
 }
 
@@ -64,21 +24,18 @@ span {
   width: 85%;
   margin: auto;
   padding: 0;
-  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
   border-radius: 7px;
-  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-  box-shadow: 0 13px 40px -13px $black_75;
+  box-shadow: $box_shadow;
 }
 
 .app-container {
-  background-color: $color_black_haze_approx;
+  background-color: #f7f7f7;
   height: 100%;
   width: 100%;
   overflow: hidden;
   margin: 0;
   padding: 0;
-  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-  box-shadow: 0 13px 40px -13px $black_75;
+  box-shadow: $box_shadow;
 }
 
 @media (max-width: 768px) {
@@ -87,272 +44,15 @@ span {
   }
 }
 
-#sideBar {
-  overflow-y: auto;
-  height: calc(100% - 120px);
-}
-
 .side {
   padding: 0;
   margin: 0;
   height: 100%;
 }
 
-.side-mainArea {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  position: relative;
-  display: block;
-  top: 0;
-}
-
-.heading {
-  padding: 10px 16px 10px 15px;
-  margin: 0;
-  height: 60px;
-  width: 100%;
-  background-color: $color_gallery_approx;
-  z-index: 1000;
-}
-
-.tabsContainer {
-  padding: 0;
-  margin: 0;
-  height: 60px;
-  width: 100%;
-}
-
-.tabsContainer-inner {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  background-color: $color_bon_jour_approx;
-}
-
-.tabs-container {
-  display: flex;
-  height: 100%;
-
-  li {
-    flex: 1;
-  }
-
-  * {
-    height: 100%;
-  }
-}
-
-.nav-link {
-  padding: 0;
-
-  &.active {
-    background-color: $color_smalt_blue_approx !important;
-  }
-}
-
-.nav-item {
-  text-align: center;
-  background-color: $color_bon_jour_approx;
-  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-  border-radius: 0;
-  border-right: 1px solid $color_pumice_approx;
-
-  &:last-child {
-    border-right: 0 solid $color_nobel_approx;
-  }
-
-  &:hover {
-    background-color: #607d8bba !important;
-    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-    border-radius: 0;
-
-    * {
-      opacity: 1;
-    }
-  }
-
-  a {
-    color: $white;
-    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-    border-radius: 0;
-    line-height: 60px;
-    font-size: 20px;
-  }
-}
-
-app-contact {
-  width: 100%;
-}
-
 .conversation {
   padding: 0;
   margin: 0;
   height: 100%;
-  border-left: 1px solid $black_8;
-}
-
-.heading-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: $white;
-  text-align: end;
-
-  div {
-    width: auto;
-    height: auto;
-  }
-}
-
-.heading-contact-container {
-  display: flex;
-  align-items: center;
-}
-
-.heading-avatar {
-  padding: 0;
-  cursor: pointer;
-}
-
-.heading-name {
-  padding: 0;
-  cursor: pointer;
-}
-
-.heading-name-details {
-  margin-left: 10px;
-}
-
-.heading-dot {
-  padding: 0;
-  margin-left: 10px;
-
-  i {
-    text-align: right;
-    padding: 5px;
-    color: $color_mountain_mist_approx;
-    cursor: pointer;
-  }
-}
-
-.faIcon {
-  opacity: 0.6;
-
-  &:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
-}
-
-.message {
-  padding: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin: 0;
-  overflow-y: auto;
-  border: 1px solid $color_black_haze_approx;
-  height: calc(100% - 120px);
-  background-color: #eeeeeeaf;
-}
-
-.reply {
-  height: 60px;
-  width: 100%;
-  background-color: $color_bon_jour_approx;
-  padding: 10px 5px;
-  margin: 0;
-  z-index: 1000;
-}
-
-.paperClip {
-  //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-  transform: rotate(-45deg);
-  text-align: center;
-
-  fa-icon {
-    font-size: 26px;
-    opacity: 0.4;
-
-    &:hover {
-      opacity: 0.7;
-    }
-  }
-}
-
-.reply-main {
-  padding: 1px 5px;
-
-  textarea {
-    width: 100%;
-    resize: none;
-    overflow: hidden;
-    padding: 5px;
-    outline: none;
-    border: none;
-    text-indent: 5px;
-    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: none;
-    height: 100%;
-    font-size: 16px;
-
-    &:focus {
-      outline: none;
-      border: none;
-      text-indent: 5px;
-      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-      box-shadow: none;
-    }
-  }
-}
-
-.reply-send {
-  padding: 1px 10px;
-
-  i {
-    text-align: center;
-    padding: 5px;
-    color: $color_mountain_mist_approx;
-    cursor: pointer;
-  }
-}
-
-.btn-send {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  border: 0;
-  outline: none !important;
-  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-  box-shadow: none !important;
-  background-color: $color_smalt_blue_approx;
-
-  &:hover {
-    background-color: #607d8bba;
-  }
-
-  &:active:focus {
-    background-color: $color_scarpa_flow_approx;
-  }
-
-  &.active:focus {
-    background-color: $color_scarpa_flow_approx;
-  }
-}
-
-.nav-tabs .nav-link {
-  border: 0 solid transparent;
-  //Instead of the line below you could use @include border-top-left-radius($radius)
-  border-top-left-radius: 0;
-  //Instead of the line below you could use @include border-top-right-radius($radius)
-  border-top-right-radius: 0;
-}
-
-.heading-avatar-icon img {
-  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
 }
