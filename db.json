@@ -8,7 +8,7 @@
       "statusText": "Greens do not quit!",
       "conversationId": 1,
       "lastMessage": {
-        "time": "1560417150",
+        "time": "1560761740",
         "text": "I'm an assistant buyer!"
       }
     },
@@ -32,7 +32,7 @@
       "statusText": "I don't even have a \"pla\".",
       "conversationId": 3,
       "lastMessage": {
-        "time": "1560410420",
+        "time": "1560777345",
         "text": "Thank you, my babies."
       }
     },
@@ -44,7 +44,7 @@
       "statusText": "How you doin'?",
       "conversationId": 4,
       "lastMessage": {
-        "time": "1560062150",
+        "time": "1560670540",
         "text": "Bert! Bert! Bert!"
       }
     },
@@ -81,12 +81,12 @@
       "messages": [
         {
           "type": 1,
-          "time": "1560417030",
+          "time": "1560761430",
           "text": "Greens do not quit!"
         },
         {
           "type": 1,
-          "time": "1560417150",
+          "time": "1560761740",
           "text": "I'm an assistant buyer!"
         }
       ]
@@ -111,12 +111,12 @@
       "messages": [
         {
           "type": 1,
-          "time": "1560410120",
+          "time": "1560774030",
           "text": "I don't even have a \"pla\"."
         },
         {
           "type": 1,
-          "time": "1560410420",
+          "time": "1560777345",
           "text": "Thank you, my babies."
         }
       ]
@@ -126,27 +126,27 @@
       "messages": [
         {
           "type": 1,
-          "time": "1560060030",
+          "time": "1560670245",
           "text": "How you doin'?"
         },
         {
           "type": 2,
-          "time": "1560061810",
+          "time": "1560670355",
           "text": "I am doing nothing man!"
         },
         {
           "type": 2,
-          "time": "1560062110",
+          "time": "1560670375",
           "text": "It's a Sunday. I don't move on Sundays."
         },
         {
           "type": 1,
-          "time": "1560062150",
+          "time": "1560670540",
           "text": "Bert! Bert! Bert!"
         },
         {
           "type": 2,
-          "time": "1560062435",
+          "time": "1560670820",
           "text": "Thank you Joey! See ya!"
         }
       ]
