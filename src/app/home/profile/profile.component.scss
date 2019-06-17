@@ -1,6 +1,3 @@
-$color_fern_approx: #63bc67;
-$color_red_orange_approx: #f44336;
-
 fa-icon {
   cursor: pointer;
 }
@@ -35,10 +32,10 @@ fa-icon {
   }
 
   .status-online {
-    background-color: $color_fern_approx;
+    background-color: #63bc67;
   }
 
   .status-offline {
-    background-color: $color_red_orange_approx;
+    background-color: #f44336;
   }
 }
