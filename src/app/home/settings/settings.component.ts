@@ -7,7 +7,6 @@ import { I18nService } from '@app/core';
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss']
 })
-
 export class SettingsComponent {
   setLanguage(language: string) {
     this.i18nService.language = language;
@@ -16,10 +15,10 @@ export class SettingsComponent {
   get currentLanguage(): string {
     return this.i18nService.language;
   }
-  
+
   get languages(): string[] {
     return this.i18nService.supportedLanguages;
-  }  
+  }
 
   constructor(private i18nService: I18nService) {}
 }

@@ -12,5 +12,4 @@ import { SettingsModule } from '../settings/settings.module';
   exports: [SideBarComponent],
   providers: []
 })
-
 export class SideBarModule {}

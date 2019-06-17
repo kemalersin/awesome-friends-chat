@@ -29,7 +29,10 @@ export class ChatComponent implements OnInit {
   constructor(private chatService: ChatService, private modalService: NgbModal) {}
 
   public showProfile() {
-    const modalRef = this.modalService.open(ProfileComponent, {windowClass: 'animated jackInTheBox fast', centered: true});
+    const modalRef = this.modalService.open(ProfileComponent, {
+      windowClass: 'animated jackInTheBox fast',
+      centered: true
+    });
     modalRef.componentInstance.contact = this.contact;
   }
 
@@ -53,21 +56,21 @@ export class ChatComponent implements OnInit {
     this.conversation.messages.push(message);
   }
 
-  ngOnInit() {   
-    this.chatService.getContact() 
-      .subscribe((contact) => {
-        this.contact = contact;
+  ngOnInit() {
+    this.chatService.getContact().subscribe(contact => {
+      this.contact = contact;
 
-        if (!contact.conversationId) {
-          this.conversation = null;
-          return;
-        }
+      if (!contact.conversationId) {
+        this.conversation = null;
+        return;
+      }
 
-        this.isLoading = true;
+      this.isLoading = true;
 
-        this.chatService.getConversation(contact.conversationId)
-          .pipe(finalize(() => (this.isLoading = false)))  
-          .subscribe(conversation => (this.conversation = conversation));
-      });
+      this.chatService
+        .getConversation(contact.conversationId)
+        .pipe(finalize(() => (this.isLoading = false)))
+        .subscribe(conversation => (this.conversation = conversation));
+    });
   }
 }

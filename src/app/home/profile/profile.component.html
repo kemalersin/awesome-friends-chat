@@ -5,11 +5,11 @@
 </div>
 <div class="modal-body text-center">
   <div class="avatar">
-    <img [src]="contact.avatar" class="rounded-circle img-fluid" alt="{{contact.name}}" />
+    <img [src]="contact.avatar" class="rounded-circle img-fluid" alt="{{ contact.name }}" />
     <span class="status status-{{ contact.status }}"></span>
   </div>
-  <h3 class="mb-0">{{contact.name}}</h3>
-  <p class="text-muted">{{contact.statusText}}</p>
+  <h3 class="mb-0">{{ contact.name }}</h3>
+  <p class="text-muted">{{ contact.statusText }}</p>
   <p>
     <fa-icon [icon]="faFacebook" size="2x" class="text-primary"></fa-icon>
     <fa-icon [icon]="faTwitter" size="2x" class="text-info"></fa-icon>

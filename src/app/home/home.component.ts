@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faCog, faPaperclip, faCommentAlt, faUser, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,7 +6,7 @@ import { faCog, faPaperclip, faCommentAlt, faUser, faInfoCircle } from '@fortawe
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   faSettings = faCog;
   faPaperClip = faPaperclip;
   faCommentDots = faCommentAlt;
@@ -14,6 +14,4 @@ export class HomeComponent implements OnInit {
   faInfo = faInfoCircle;
 
   constructor() {}
-
-  ngOnInit() {}
 }

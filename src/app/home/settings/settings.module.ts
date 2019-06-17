@@ -12,5 +12,4 @@ import { SettingsComponent } from './settings.component';
   exports: [SettingsComponent],
   providers: []
 })
-
 export class SettingsModule {}

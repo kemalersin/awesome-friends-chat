@@ -13,7 +13,6 @@ const routes = {
 @Injectable({
   providedIn: 'root'
 })
-
 export class ChatService {
   @Output() contactEmitter: EventEmitter<IContact> = new EventEmitter();
 
@@ -25,7 +24,7 @@ export class ChatService {
 
   getContact(): Observable<IContact> {
     return this.contactEmitter;
-  }  
+  }
 
   getConversation(id: number): Observable<IConversation> {
     return this.httpClient

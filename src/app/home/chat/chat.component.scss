@@ -1,4 +1,7 @@
-html, body, div, span {
+html,
+body,
+div,
+span {
   width: 100%;
   padding: 0;
   margin: 0;
@@ -122,8 +125,8 @@ html, body, div, span {
 
 .sender {
   float: right;
-  background-color: #7fbcfe;;
-  color: white;  
+  background-color: #7fbcfe;
+  color: white;
   border-radius: 6px 6px 0px 6px;
   margin-left: 20px;
 }
@@ -133,7 +136,8 @@ html, body, div, span {
   background: #ffffff;
 }
 
-.sender, .receiver {
+.sender,
+.receiver {
   width: auto;
   min-width: 200px;
   padding: 4px 10px 7px;
@@ -141,7 +145,7 @@ html, body, div, span {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   word-wrap: break-word;
   display: inline-block;
-  margin-right: 20px;  
+  margin-right: 20px;
 }
 
 .message-text {
@@ -171,7 +175,7 @@ html, body, div, span {
     right: 0;
 
     img {
-      opacity: .8;
+      opacity: 0.8;
     }
   }
 }

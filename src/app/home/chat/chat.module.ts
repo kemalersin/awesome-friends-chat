@@ -11,10 +11,7 @@ import { ChatComponent } from './chat.component';
 import { ProfileComponent } from '../profile/profile.component';
 
 @NgModule({
-  declarations: [
-    ChatComponent,
-    ProfileComponent
-],
+  declarations: [ChatComponent, ProfileComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -26,8 +23,6 @@ import { ProfileComponent } from '../profile/profile.component';
   ],
   exports: [ChatComponent],
   providers: [NgbActiveModal],
-  entryComponents: [
-    ProfileComponent
-  ]
+  entryComponents: [ProfileComponent]
 })
 export class ChatModule {}

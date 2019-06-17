@@ -23,28 +23,28 @@
   <div class="col-12 col-md-12 h-auto">
     <app-loader [isLoading]="isLoading"></app-loader>
     <div class="robot animated slideInRight faster" *ngIf="!(isLoading || conversation)">
-        <img class="img-fluid" src="https://res.cloudinary.com/de2ljvtxn/image/upload/v1560509275/test/robotics.png">
-    </div>    
+      <img class="img-fluid" src="https://res.cloudinary.com/de2ljvtxn/image/upload/v1560509275/test/robotics.png" />
+    </div>
     <div *ngIf="!isLoading && conversation">
       <div class="row message-body animated fadeIn faster" *ngFor="let message of conversation.messages">
         <div class="col-sm-12 message-main-{{ message.type == 1 ? 'receiver' : 'sender' }}">
-          <div [ngClass]="{ 'receiver': message.type == 1, 'sender': message.type == 2 }">
+          <div [ngClass]="{ receiver: message.type == 1, sender: message.type == 2 }">
             <div class="message-text">
               {{ message.text }}
             </div>
           </div>
           <div class="receiver-time">
             {{
-            message.time
-              | amFromUnix
-              | amCalendar
-                : {
-                    sameDay: 'h:mm A',
-                    lastDay: '[Yesterday]',
-                    lastWeek: 'M/D/Y',
-                    sameElse: 'M/D/Y'
-                  }
-          }}
+              message.time
+                | amFromUnix
+                | amCalendar
+                  : {
+                      sameDay: 'h:mm A',
+                      lastDay: '[Yesterday]',
+                      lastWeek: 'M/D/Y',
+                      sameElse: 'M/D/Y'
+                    }
+            }}
           </div>
         </div>
       </div>
@@ -59,11 +59,20 @@
       <fa-icon [icon]="faPaperClip" class="faIcon"></fa-icon>
     </div>
     <div class="col-8 col-sm-9 reply-main">
-      <input type="text" name="message" class="form-control" [(ngModel)]="messageBody" placeholder="{{'Message' | translate}}"
-        autocomplete="off" [readonly]="isLoading || !contact">
+      <input
+        type="text"
+        name="message"
+        class="form-control"
+        [(ngModel)]="messageBody"
+        placeholder="{{ 'Message' | translate }}"
+        autocomplete="off"
+        [readonly]="isLoading || !contact"
+      />
     </div>
     <div class="col-3 col-sm-2 reply-send">
-      <button type="submit" class="btn btn-info btn-send" [disabled]="!messageBody || isLoading || !contact" translate>Send</button>
+      <button type="submit" class="btn btn-info btn-send" [disabled]="!messageBody || isLoading || !contact" translate>
+        Send
+      </button>
     </div>
   </div>
 </form>
