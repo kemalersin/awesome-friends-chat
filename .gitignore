@@ -24,7 +24,7 @@
 .project
 .classpath
 .c9/
-.firebase/
+.firebase/*
 *.launch
 .settings/
 xcuserdata/
