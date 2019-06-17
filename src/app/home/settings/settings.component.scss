@@ -1,6 +1,3 @@
-$color_bon_jour_approx: #e2e2e2;
-$color_science_blue_approx: #0073dd;
-
 * {
   font-size: 14px;
 }
@@ -19,7 +16,7 @@ span {
   width: 100%;
   height: 15px;
   border-radius: 5px;
-  background: $color_bon_jour_approx;
+  background: #e2e2e2;
   outline: none;
   opacity: 0.8;
   -webkit-transition: 0.2s;
@@ -36,14 +33,14 @@ span {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: $color_science_blue_approx;
-  cursor: pointer;
+  background: #0073dd;
+  cursor: pointer;  
 }
 
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: $color_science_blue_approx;
+  background: #0073dd;
   cursor: pointer;
 }
