@@ -25,7 +25,7 @@
 </div>
 
 <!-- Chat section -->
-<div id="conversation" class="row message" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+<div id="conversation" class="row message" #scrollTo [scrollTop]="scrollTo.scrollHeight">
   <div class="col-12 col-md-12 h-auto">
     <app-loader [isLoading]="isLoading"></app-loader>
     <div class="robot animated slideInRight faster" *ngIf="!(isLoading || conversation)">

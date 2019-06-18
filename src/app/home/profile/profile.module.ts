@@ -8,7 +8,7 @@ import { ProfileComponent } from '@home/profile/profile.component';
 
 @NgModule({
   declarations: [ProfileComponent],
-  imports: [BrowserModule, FormsModule, FontAwesomeModule, NgbModule.forRoot()],
+  imports: [BrowserModule, FormsModule, FontAwesomeModule, NgbModule],
   exports: [ProfileComponent],
   providers: [NgbActiveModal],
   entryComponents: [ProfileComponent]

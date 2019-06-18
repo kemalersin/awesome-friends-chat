@@ -38,7 +38,11 @@
             <span *ngIf="inConversation" class="status status-{{ contact.status }}"></span>
           </div>
         </div>
-        <div class="col-10 col-sm-9 contact-main" (click)="startConversation(contact)">
+        <div
+          class="col-10 col-sm-9 contact-main"
+          [ngx-scroll-to]="'#conversation'"
+          (click)="startConversation(contact)"
+        >
           <div class="row">
             <div class="col-sm-12 col-xs-12 contact-info">
               <span class="name-meta contact-name">
