@@ -1,13 +1,13 @@
 {
   "APP_NAME": "Awesome Friends Chat",
   "Language": "Dil",
-  "Update frequency": "Güncelleme sıklığı",  
+  "Update frequency": "Guncelleme sikligi",  
   "Search": "Ara...",
   "Message": "bir mesaj yaz...",
-  "Send": "Gönder",
-  "Show offline users": "Çevrimdışı kullanıcıları göster",
-  "Chat backup": "Sohbet yedeği",
-  "Daily": "Günlük",
-  "Weekly": "Haftalık",
-  "Monthly": "Aylık"
+  "Send": "Gonder",
+  "Show offline users": "Cevrimdisi kullanicilari goster",
+  "Chat backup": "Sohbet yedegi",
+  "Daily": "Gunluk",
+  "Weekly": "Haftalik",
+  "Monthly": "Aylik"
 }
