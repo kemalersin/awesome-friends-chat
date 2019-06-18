@@ -6,8 +6,9 @@ import { MomentModule } from 'ngx-moment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { SharedModule } from '@app/shared';
+import { ProfileModule } from '@home/profile/profile.module';
+
 import { ChatComponent } from './chat.component';
-import { ProfileModule } from '../profile/profile.module';
 
 @NgModule({
   declarations: [ChatComponent],

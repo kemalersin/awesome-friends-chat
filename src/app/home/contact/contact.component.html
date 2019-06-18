@@ -1,49 +1,53 @@
-<input
-  id="searchInput"
-  type="text"
-  [(ngModel)]="filter"
-  placeholder="{{ 'Search' | translate }}"
-  class="contact-search"
-/>
+<app-loader [isLoading]="isLoading"></app-loader>
 
-<div
-  class="row contact-body"
-  [ngClass]="{ active: selectedContact && contact.id == selectedContact.id }"
-  *ngFor="let contact of filteredContacts"
-  [hidden]="inConversation && contact.status == 'offline' && !showOfflineUsers"
->
-  <div class="col-12 col-md-12">
-    <div class="row time-container" *ngIf="inConversation">
-      <div class="col-12 col-md-12 float-right contact-time">
-        <span class="time-meta float-right">{{
-          contact.lastMessage.time
-            | amFromUnix
-            | amCalendar
-              : {
-                  sameDay: 'h:mm A',
-                  lastDay: '[Yesterday]',
-                  lastWeek: 'M/D/Y',
-                  sameElse: 'M/D/Y'
-                }
-        }}</span>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-2 col-sm-3 contact-avatar" (click)="profileService.showProfile(contact)">
-        <div class="avatar-icon">
-          <img [src]="contact.avatar" />
-          <span *ngIf="inConversation" class="status status-{{ contact.status }}"></span>
+<div [hidden]="isLoading">
+  <input
+    id="searchInput"
+    type="text"
+    [(ngModel)]="filter"
+    placeholder="{{ 'Search' | translate }}"
+    class="contact-search"
+  />
+
+  <div
+    class="row contact-body"
+    [ngClass]="{ active: selectedContact && contact.id == selectedContact.id }"
+    *ngFor="let contact of filteredContacts"
+    [hidden]="inConversation && contact.status == 'offline' && !showOfflineUsers"
+  >
+    <div class="col-12 col-md-12">
+      <div class="row time-container" *ngIf="inConversation">
+        <div class="col-12 col-md-12 float-right contact-time">
+          <span class="time-meta float-right">{{
+            contact.lastMessage.time
+              | amFromUnix
+              | amCalendar
+                : {
+                    sameDay: 'h:mm A',
+                    lastDay: '[Yesterday]',
+                    lastWeek: 'M/D/Y',
+                    sameElse: 'M/D/Y'
+                  }
+          }}</span>
         </div>
       </div>
-      <div class="col-10 col-sm-9 contact-main" (click)="startConversation(contact)">
-        <div class="row">
-          <div class="col-sm-12 col-xs-12 contact-info">
-            <span class="name-meta contact-name">
-              {{ contact.name }}
-            </span>
-            <span class="name-meta last-message">
-              {{ inConversation ? contact.lastMessage.text : contact.statusText }}
-            </span>
+      <div class="row">
+        <div class="col-2 col-sm-3 contact-avatar" (click)="profileService.showProfile(contact)">
+          <div class="avatar-icon">
+            <img [src]="contact.avatar" />
+            <span *ngIf="inConversation" class="status status-{{ contact.status }}"></span>
+          </div>
+        </div>
+        <div class="col-10 col-sm-9 contact-main" (click)="startConversation(contact)">
+          <div class="row">
+            <div class="col-sm-12 col-xs-12 contact-info">
+              <span class="name-meta contact-name">
+                {{ contact.name }}
+              </span>
+              <span class="name-meta last-message">
+                {{ inConversation ? contact.lastMessage.text : contact.statusText }}
+              </span>
+            </div>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { ProfileComponent } from '../profile/profile.component';
+import { ProfileComponent } from '@home/profile/profile.component';
 
 @NgModule({
   declarations: [ProfileComponent],

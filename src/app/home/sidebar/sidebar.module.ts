@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { SharedModule } from '@app/shared';
 import { SideBarComponent } from './sidebar.component';
-import { ContactModule } from '../contact/contact.module';
-import { SettingsModule } from '../settings/settings.module';
+
+import { ContactModule } from '@home/contact/contact.module';
+import { SettingsModule } from '@home/settings/settings.module';
 
 @NgModule({
   declarations: [SideBarComponent],
-  imports: [FontAwesomeModule, ContactModule, SettingsModule, SharedModule],
+  imports: [FontAwesomeModule, ContactModule, SettingsModule],
   exports: [SideBarComponent],
   providers: []
 })

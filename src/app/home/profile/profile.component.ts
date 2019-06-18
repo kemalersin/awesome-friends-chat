@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { faFacebookSquare, faTwitterSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
-import { IContact } from '../contact/contact';
+import { IContact } from '@home/contact/contact';
 
 @Component({
   selector: 'app-modal-profile',

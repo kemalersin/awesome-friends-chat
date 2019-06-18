@@ -1,4 +1,5 @@
 <div class="p-3">
+  <!-- Language setting -->
   <span class="d-block mb-2" translate>Language</span>
   <div class="mb-4" ngbDropdown>
     <button id="language-dropdown" ngbDropdownToggle class="btn btn-outline-primary">{{ currentLanguage }}</button>
@@ -8,15 +9,19 @@
       </button>
     </div>
   </div>
+
+  <!-- Slider sample -->
   <span class="d-block mb-2" translate>Update frequency</span>
   <div class="slidecontainer mb-4">
     <input type="range" name="updateFrequency" min="1" max="10" value="3" class="slider" />
   </div>
+
+  <!-- Show offline users setting -->
   <div class="custom-control custom-checkbox mb-4">
     <input
       type="checkbox"
       id="offlineUsers"
-      name="showOfflineUSers"
+      name="showOfflineUsers"
       class="custom-control-input"
       [(ngModel)]="showOfflineUsers"
       (ngModelChange)="contactService.changeOfflineMode(showOfflineUsers)"
@@ -26,6 +31,8 @@
       <span translate>Show offline users</span>
     </label>
   </div>
+
+  <!-- Radio group sample -->
   <span class="d-block mb-2" translate>Chat backup</span>
   <div class="custom-control custom-radio">
     <input type="radio" id="chatBackupDaily" name="chatBackup" class="custom-control-input" checked />

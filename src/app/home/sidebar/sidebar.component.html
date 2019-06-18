@@ -28,16 +28,14 @@
 
   <!-- Sidebar tab contents -->
   <div id="sideBar" class="tab-content">
-
     <!-- Contacts in conversation tab -->
     <div id="chat" class="tab-pane active">
-      <app-loader [isLoading]="isLoading"></app-loader>
-      <app-contact [contacts]="contacts" [inConversation]="true" [hidden]="isLoading"></app-contact>
+      <app-contact [inConversation]="true"></app-contact>
     </div>
 
     <!-- All contacts tab -->
     <div id="contacts" class="tab-pane fade">
-      <app-contact [contacts]="contacts"></app-contact>
+      <app-contact></app-contact>
     </div>
 
     <!-- Settings tab -->

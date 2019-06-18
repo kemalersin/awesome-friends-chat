@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 
 import { I18nService } from '@app/core';
-
-import { ContactService } from '../contact/contact.service';
+import { ContactService } from '@home/contact/contact.service';
 
 @Component({
   selector: 'app-settings',

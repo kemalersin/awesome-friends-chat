@@ -5,6 +5,10 @@ import { map, catchError } from 'rxjs/operators';
 
 import { IContact } from './contact';
 
+/**
+ * API GET route for all contacts.
+ * @return The route string.
+ */
 const routes = {
   contacts: () => '/contacts'
 };
@@ -17,6 +21,16 @@ export class ContactService {
 
   constructor(private httpClient: HttpClient) {}
 
+  // Emit passing offline/online contacts displaying mode setting:
+  public changeOfflineMode(showOfflineUsers: boolean) {
+    this.contactEmitter.emit(showOfflineUsers);
+  }
+
+  public getOfflineMode(): Observable<boolean> {
+    return this.contactEmitter;
+  }
+
+  // Load contacts data from API:
   public getContacts(): Observable<IContact[]> {
     return this.httpClient
       .cache()
@@ -25,13 +39,5 @@ export class ContactService {
         map((contacts: any) => contacts),
         catchError(() => of('Could not load contacts.'))
       );
-  }
-
-  public changeOfflineMode(showOfflineUsers: boolean) {
-    this.contactEmitter.emit(showOfflineUsers);
-  }
-
-  public getOfflineMode(): Observable<boolean> {
-    return this.contactEmitter;
   }
 }

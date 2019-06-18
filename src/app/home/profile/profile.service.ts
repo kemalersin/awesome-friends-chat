@@ -3,7 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ProfileComponent } from './profile.component';
 
-import { IContact } from '../contact/contact';
+import { IContact } from '@home/contact/contact';
 
 @Injectable({
   providedIn: 'root'

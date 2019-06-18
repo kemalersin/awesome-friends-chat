@@ -1,3 +1,4 @@
+<!-- Contact info section -->
 <div class="row heading heading-container">
   <div class="col-xs-12 col-sm-6">
     <div class="heading-contact-container" *ngIf="contact" (click)="profileService.showProfile(contact)">
@@ -22,6 +23,8 @@
     </a>
   </div>
 </div>
+
+<!-- Chat section -->
 <div id="conversation" class="row message" #scrollMe [scrollTop]="scrollMe.scrollHeight">
   <div class="col-12 col-md-12 h-auto">
     <app-loader [isLoading]="isLoading"></app-loader>
@@ -54,6 +57,8 @@
     </div>
   </div>
 </div>
+
+<!-- Reply section -->
 <form name="reply" autocomplete="off" (ngSubmit)="sendMessage()">
   <div class="row reply">
     <div class="col-1 col-sm-1 paperClip">
