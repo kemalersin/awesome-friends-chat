@@ -24,6 +24,7 @@ export class SideBarComponent implements OnInit {
   ngOnInit() {
     this.isLoading = true;
 
+    // Getting all contacts from service for conversation and all contacts list
     this.contactService
       .getContacts()
       .pipe(finalize(() => (this.isLoading = false)))
