@@ -57,6 +57,9 @@ export class ContactComponent {
   ngOnInit() {
     this.isLoading = true;
 
+    // Get selected contact via service:
+    this.chatService.getContact().subscribe(contact => (this.selectedContact = contact));
+
     // Getting all contacts from service for conversation and all contacts list:
     this.contactService
       .getContacts()
