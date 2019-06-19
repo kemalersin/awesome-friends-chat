@@ -1,3 +1,5 @@
+// *****************************************************************************************************
+
 import { Injectable } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -5,11 +7,17 @@ import { ProfileComponent } from './profile.component';
 
 import { IContact } from '@home/contact/contact';
 
+// *****************************************************************************************************
+
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
+  // ...................................................................................................
+
   constructor(private modalService: NgbModal) {}
+
+  // ...................................................................................................
 
   public showProfile(contact: IContact) {
     const modalRef = this.modalService.open(ProfileComponent, {
@@ -18,4 +26,6 @@ export class ProfileService {
     });
     modalRef.componentInstance.contact = contact;
   }
+
+  // ...................................................................................................
 }
