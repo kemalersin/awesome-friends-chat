@@ -1,51 +1,61 @@
 <div class="p-3">
   <!-- Language setting -->
-  <span class="d-block mb-2" translate>Language</span>
-  <div class="mb-4" ngbDropdown>
-    <button id="language-dropdown" ngbDropdownToggle class="btn btn-outline-primary">{{ currentLanguage }}</button>
-    <div ngbDropdownMenu aria-labelledby="language-dropdown">
-      <button ngbDropdownItem class="dropdown-item" *ngFor="let language of languages" (click)="setLanguage(language)">
-        {{ language }}
-      </button>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title" translate>Language</h5>
+      <div ngbDropdown>
+        <button id="language-dropdown" ngbDropdownToggle class="btn btn-outline-primary">{{ currentLanguage }}</button>
+        <div ngbDropdownMenu aria-labelledby="language-dropdown">
+          <button ngbDropdownItem class="dropdown-item" *ngFor="let language of languages"
+            (click)="setLanguage(language)">
+            {{ language }}
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Slider sample -->
-  <span class="d-block mb-2" translate>Update frequency</span>
-  <div class="slidecontainer mb-4">
-    <input type="range" name="updateFrequency" min="1" max="10" value="3" class="slider" />
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title" translate>Update frequency</h5>
+      <div class="slidecontainer">
+        <input type="range" name="updateFrequency" min="1" max="10" value="3" class="slider" />
+      </div>
+    </div>
   </div>
 
   <!-- Show offline users setting -->
-  <div class="custom-control custom-checkbox mb-4">
-    <input
-      type="checkbox"
-      id="offlineUsers"
-      name="showOfflineUsers"
-      class="custom-control-input"
-      [(ngModel)]="showOfflineUsers"
-      (ngModelChange)="contactService.changeOfflineMode(showOfflineUsers)"
-      checked
-    />
-    <label class="custom-control-label" for="offlineUsers">
-      <span translate>Show offline users</span>
-    </label>
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" id="offlineUsers" name="showOfflineUsers" class="custom-control-input"
+          [(ngModel)]="showOfflineUsers" (ngModelChange)="contactService.changeOfflineMode(showOfflineUsers)" checked />
+        <label class="custom-control-label" for="offlineUsers">
+          <span translate>Show offline users</span>
+        </label>
+      </div>
+    </div>
   </div>
 
   <!-- Radio group sample -->
-  <span class="d-block mb-2" translate>Chat backup</span>
-  <div class="custom-control custom-radio">
-    <input type="radio" id="chatBackupDaily" name="chatBackup" class="custom-control-input" checked />
-    <label class="custom-control-label" for="chatBackupDaily">
-      <span translate>Daily</span>
-    </label>
-  </div>
-  <div class="custom-control custom-radio">
-    <input type="radio" id="chatBackupWeekly" name="chatBackup" class="custom-control-input" />
-    <label class="custom-control-label" for="chatBackupWeekly"> <span translate>Weekly</span></label>
-  </div>
-  <div class="custom-control custom-radio">
-    <input type="radio" id="chatBackupMonthly" name="chatBackup" class="custom-control-input" />
-    <label class="custom-control-label" for="chatBackupMonthly"> <span translate>Monthly</span></label>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title" translate>Chat backup</h5>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="chatBackupDaily" name="chatBackup" class="custom-control-input" checked />
+        <label class="custom-control-label" for="chatBackupDaily">
+          <span translate>Daily</span>
+        </label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="chatBackupWeekly" name="chatBackup" class="custom-control-input" />
+        <label class="custom-control-label" for="chatBackupWeekly"> <span translate>Weekly</span></label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="chatBackupMonthly" name="chatBackup" class="custom-control-input" />
+        <label class="custom-control-label" for="chatBackupMonthly"> <span translate>Monthly</span></label>
+      </div>
+    </div>
   </div>
 </div>
