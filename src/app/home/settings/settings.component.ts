@@ -48,7 +48,7 @@ export class SettingsComponent {
 
   // ...................................................................................................
 
-  public setLanguage(language: string) {
+  public setLanguage(language: string): void {
     this.i18nService.language = language;
   }
 

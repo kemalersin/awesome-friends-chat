@@ -85,13 +85,13 @@ export class ContactComponent implements OnInit {
 
   // ...................................................................................................
 
-  public selectContact(contact: IContact) {
+  public selectContact(contact: IContact): void {
     this.contactService.selectedContact = contact;
   }
 
   // ...................................................................................................
 
-  public showProfile(contact: IContact) {
+  public showProfile(contact: IContact): void {
     this.profileService.showProfile(contact);
   }
 

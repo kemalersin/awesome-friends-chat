@@ -62,13 +62,13 @@ export class ChatComponent implements OnInit {
 
   // ...................................................................................................
 
-  public showProfile() {
+  public showProfile(): void {
     this.profileService.showProfile(this.contact);
   }
 
   // ...................................................................................................
 
-  public sendMessage() {
+  public sendMessage(): void {
     const message: IMessage = {
       type: MessageType.Reply,
       time: moment().unix(),

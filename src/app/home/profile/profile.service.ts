@@ -19,7 +19,7 @@ export class ProfileService {
 
   // ...................................................................................................
 
-  public showProfile(contact: IContact) {
+  public showProfile(contact: IContact): void {
     const modalRef = this.modalService.open(ProfileComponent, {
       windowClass: 'animated jackInTheBox fast',
       centered: true
