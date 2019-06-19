@@ -1,5 +1,9 @@
+// *****************************************************************************************************
+
 import { Component } from '@angular/core';
 import { faCog, faCommentAlt, faUser } from '@fortawesome/free-solid-svg-icons';
+
+// *****************************************************************************************************
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +11,15 @@ import { faCog, faCommentAlt, faUser } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SideBarComponent {
+  // ...................................................................................................
+
   faCommentDots = faCommentAlt;
   faUser = faUser;
   faSettings = faCog;
 
+  // ...................................................................................................
+
   constructor() {}
+
+  // ...................................................................................................
 }

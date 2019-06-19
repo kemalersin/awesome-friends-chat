@@ -1,3 +1,5 @@
+// *****************************************************************************************************
+
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -10,6 +12,8 @@ import { ProfileModule } from '@home/profile/profile.module';
 
 import { ChatComponent } from './chat.component';
 
+// *****************************************************************************************************
+
 @NgModule({
   declarations: [ChatComponent],
   imports: [BrowserModule, FormsModule, TranslateModule, FontAwesomeModule, MomentModule, SharedModule, ProfileModule],
@@ -17,3 +21,5 @@ import { ChatComponent } from './chat.component';
   providers: []
 })
 export class ChatModule {}
+
+// *****************************************************************************************************

@@ -1,3 +1,5 @@
+// *****************************************************************************************************
+
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -5,6 +7,8 @@ import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { ProfileComponent } from '@home/profile/profile.component';
+
+// *****************************************************************************************************
 
 @NgModule({
   declarations: [ProfileComponent],
@@ -14,3 +18,5 @@ import { ProfileComponent } from '@home/profile/profile.component';
   entryComponents: [ProfileComponent]
 })
 export class ProfileModule {}
+
+// *****************************************************************************************************

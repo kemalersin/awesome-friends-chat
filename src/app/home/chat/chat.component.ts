@@ -1,3 +1,5 @@
+// *****************************************************************************************************
+
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 import { has } from 'lodash';
@@ -12,12 +14,16 @@ import { IContact } from '@home/contact/contact';
 import { IMessage, MessageType } from './conversation';
 import { IConversation } from './conversation';
 
+// *****************************************************************************************************
+
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+  // ...................................................................................................
+
   contact: IContact;
   conversation: IConversation;
 
@@ -26,11 +32,15 @@ export class ChatComponent implements OnInit {
 
   faPaperClip = faPaperclip;
 
+  // ...................................................................................................
+
   constructor(
     private chatService: ChatService,
     private contactService: ContactService,
     private profileService: ProfileService
   ) {}
+
+  // ...................................................................................................
 
   ngOnInit() {
     this.contactService.contactSubject.subscribe(contact => {
@@ -50,9 +60,13 @@ export class ChatComponent implements OnInit {
     });
   }
 
+  // ...................................................................................................
+
   public showProfile() {
     this.profileService.showProfile(this.contact);
   }
+
+  // ...................................................................................................
 
   public sendMessage() {
     const message: IMessage = {
@@ -71,4 +85,6 @@ export class ChatComponent implements OnInit {
 
     this.conversation.messages.push(message);
   }
+
+  // ...................................................................................................
 }

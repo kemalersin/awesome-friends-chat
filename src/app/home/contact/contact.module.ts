@@ -1,3 +1,5 @@
+// *****************************************************************************************************
+
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -9,6 +11,8 @@ import { SharedModule } from '@app/shared';
 
 import { ContactComponent } from './contact.component';
 
+// *****************************************************************************************************
+
 @NgModule({
   declarations: [ContactComponent],
   imports: [BrowserModule, FormsModule, TranslateModule, MomentModule, ScrollToModule.forRoot(), SharedModule],
@@ -16,3 +20,5 @@ import { ContactComponent } from './contact.component';
   providers: []
 })
 export class ContactModule {}
+
+// *****************************************************************************************************

@@ -1,3 +1,5 @@
+// *****************************************************************************************************
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,6 +12,8 @@ import { SideBarModule } from './sidebar/sidebar.module';
 import { ChatModule } from './chat/chat.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+
+// *****************************************************************************************************
 
 @NgModule({
   imports: [
@@ -26,3 +30,5 @@ import { HomeComponent } from './home.component';
   providers: []
 })
 export class HomeModule {}
+
+// *****************************************************************************************************

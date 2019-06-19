@@ -1,3 +1,5 @@
+// *****************************************************************************************************
+
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
@@ -8,7 +10,11 @@ import { filter, map, switchMap } from 'rxjs/operators';
 import { environment } from '@env/environment';
 import { Logger, I18nService, untilDestroyed } from '@app/core';
 
+// *****************************************************************************************************
+
 const log = new Logger('App');
+
+// *****************************************************************************************************
 
 @Component({
   selector: 'app-root',
@@ -16,6 +22,8 @@ const log = new Logger('App');
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
+  // ...................................................................................................
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -23,6 +31,8 @@ export class AppComponent implements OnInit, OnDestroy {
     private translateService: TranslateService,
     private i18nService: I18nService
   ) {}
+
+  // ...................................................................................................
 
   ngOnInit() {
     if (environment.production) {
@@ -56,7 +66,11 @@ export class AppComponent implements OnInit, OnDestroy {
       });
   }
 
+  // ...................................................................................................
+
   ngOnDestroy() {
     this.i18nService.destroy();
   }
+
+  // ...................................................................................................
 }
