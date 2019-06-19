@@ -9,7 +9,9 @@ import { ContactService } from '@home/contact/contact.service';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent {
-  showOfflineUsers: boolean = true;
+  showOfflineUsers = true;
+
+  constructor(private i18nService: I18nService, public contactService: ContactService) {}
 
   get currentLanguage(): string {
     return this.i18nService.language;
@@ -22,6 +24,4 @@ export class SettingsComponent {
   public setLanguage(language: string) {
     this.i18nService.language = language;
   }
-
-  constructor(private i18nService: I18nService, public contactService: ContactService) {}
 }

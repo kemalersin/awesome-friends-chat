@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 
 import { has, includes, lowerCase } from 'lodash';
@@ -13,7 +13,7 @@ import { ProfileService } from '@home/profile/profile.service';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   @Input() inConversation: boolean;
 
   contacts: IContact[];
@@ -24,7 +24,7 @@ export class ContactComponent {
   _filter: string;
 
   isLoading = false;
-  showOfflineUsers: boolean = true;
+  showOfflineUsers = true;
 
   get filter() {
     return this._filter;
@@ -40,19 +40,6 @@ export class ContactComponent {
     private chatService: ChatService,
     private profileService: ProfileService
   ) {}
-
-  // Pass contact to chat service,
-  // then start a conversation with selected contact:
-  public startConversation(contact: IContact): void {
-    this.selectedContact = contact;
-    this.chatService.selectContact(contact);
-  }
-
-  // Filter contacts:
-  private performFilter(filterBy: string): IContact[] {
-    filterBy = lowerCase(filterBy);
-    return this.contacts.filter((contact: IContact) => includes(lowerCase(contact.name), filterBy));
-  }
 
   ngOnInit() {
     this.isLoading = true;
@@ -76,5 +63,18 @@ export class ContactComponent {
 
     // Watch offline/online contacts display setting and set a flag:
     this.contactService.getOfflineMode().subscribe(showOfflineUsers => (this.showOfflineUsers = showOfflineUsers));
+  }
+
+  // Pass contact to chat service,
+  // then start a conversation with selected contact:
+  public startConversation(contact: IContact): void {
+    this.selectedContact = contact;
+    this.chatService.selectContact(contact);
+  }
+
+  // Filter contacts:
+  private performFilter(filterBy: string): IContact[] {
+    filterBy = lowerCase(filterBy);
+    return this.contacts.filter((contact: IContact) => includes(lowerCase(contact.name), filterBy));
   }
 }

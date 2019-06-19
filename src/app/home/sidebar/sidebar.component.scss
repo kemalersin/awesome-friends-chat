@@ -22,7 +22,7 @@ span {
   }
 }
 
-#sideBar {
+#sidebar {
   overflow-y: auto;
   height: calc(100% - 120px);
 }
@@ -97,7 +97,7 @@ span {
   padding: 0;
 
   &.active {
-    background-color: #607d8b !important;
+    background-color: #607d8b;
   }
 }
 
@@ -107,7 +107,7 @@ span {
   border-radius: 0;
 
   &:hover {
-    background-color: #607d8bba !important;
+    background-color: #607d8bba;
     border-radius: 0;
 
     * {
@@ -123,7 +123,7 @@ span {
   }
 
   &:last-child a {
-    border-right: none !important;
+    border-right: none;
   }
 }
 

@@ -120,20 +120,20 @@ span {
   color: gray;
   font-size: 12px;
   text-align: right;
-  width: auto !important;
+  width: auto;
 }
 
 .sender {
   float: right;
   background-color: #7fbcfe;
   color: white;
-  border-radius: 6px 6px 0px 6px;
+  border-radius: 6px 6px 0 6px;
   margin-left: 20px;
 }
 
 .receiver {
-  border-radius: 0px 6px 6px 6px;
-  background: #ffffff;
+  border-radius: 0 6px 6px 6px;
+  background: #fff;
 }
 
 .sender,
@@ -192,7 +192,7 @@ span {
 .reply-main {
   padding: 1px 5px;
 
-  input[name="message"] {
+  input {
     width: 100%;
     resize: none;
     overflow: hidden;
@@ -229,8 +229,8 @@ span {
   height: 100%;
   padding: 0;
   border: 0;
-  outline: none !important;
-  box-shadow: none !important;
+  outline: none;
+  box-shadow: none;
   background-color: #607d8b;
 
   &:not[disabled]:hover {
