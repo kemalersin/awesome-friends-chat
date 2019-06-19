@@ -6,6 +6,10 @@
   color: var(--pink);
 }
 
+.modal-backdrop.fade {
+  transition: none;
+}
+
 @media (min-width: 992px) {
   .modal-content {
     opacity: 0.9;
