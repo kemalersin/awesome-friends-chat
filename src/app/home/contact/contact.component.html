@@ -32,17 +32,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-2 col-sm-3 contact-avatar" (click)="profileService.showProfile(contact)">
+        <div class="col-2 col-sm-3 contact-avatar" (click)="showProfile(contact)">
           <div class="avatar-icon">
             <img [src]="contact.avatar" />
             <span *ngIf="inConversation" class="status status-{{ contact.status }}"></span>
           </div>
         </div>
-        <div
-          class="col-10 col-sm-9 contact-main"
-          [ngx-scroll-to]="'#conversation'"
-          (click)="startConversation(contact)"
-        >
+        <div class="col-10 col-sm-9 contact-main" [ngx-scroll-to]="'#conversation'" (click)="selectContact(contact)">
           <div class="row">
             <div class="col-sm-12 col-xs-12 contact-info">
               <span class="name-meta contact-name">

@@ -1,7 +1,7 @@
 <!-- Contact info section -->
 <div class="row heading heading-container">
   <div class="col-xs-12 col-sm-6">
-    <div class="heading-contact-container" *ngIf="contact" (click)="profileService.showProfile(contact)">
+    <div class="heading-contact-container" *ngIf="contact" (click)="showProfile()">
       <div class="heading-avatar">
         <div class="heading-avatar-icon">
           <img [src]="contact.avatar" />

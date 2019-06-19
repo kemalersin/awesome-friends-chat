@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
+import { has } from 'lodash';
+import * as moment from 'moment';
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
 
-import * as moment from 'moment';
-
 import { ChatService } from './chat.service';
+import { ContactService } from '@home/contact/contact.service';
 import { ProfileService } from '@home/profile/profile.service';
 
 import { IContact } from '@home/contact/contact';
-import { IMessage } from './conversation';
+import { IMessage, MessageType } from './conversation';
 import { IConversation } from './conversation';
 
 @Component({
@@ -25,15 +26,37 @@ export class ChatComponent implements OnInit {
 
   faPaperClip = faPaperclip;
 
-  constructor(private chatService: ChatService, private profileService: ProfileService) {}
+  constructor(
+    private chatService: ChatService,
+    private contactService: ContactService,
+    private profileService: ProfileService
+  ) {}
 
-  /**
-   * Push a reply message to active conversation.
-   * Creates a new one if conversation is not available.
-   */
+  ngOnInit() {
+    this.contactService.contactSubject.subscribe(contact => {
+      this.contact = contact;
+
+      if (!has(contact, 'conversationId')) {
+        this.conversation = null;
+        return;
+      }
+
+      this.isLoading = true;
+
+      this.chatService
+        .getConversation(contact.conversationId)
+        .pipe(finalize(() => (this.isLoading = false)))
+        .subscribe(conversation => (this.conversation = conversation));
+    });
+  }
+
+  public showProfile() {
+    this.profileService.showProfile(this.contact);
+  }
+
   public sendMessage() {
     const message: IMessage = {
-      type: 2,
+      type: MessageType.Reply,
       time: moment().unix(),
       text: this.messageBody
     };
@@ -41,30 +64,11 @@ export class ChatComponent implements OnInit {
     this.messageBody = null;
 
     if (!this.conversation) {
-      this.conversation = { messages: [message] };
-      return;
+      this.conversation = <IConversation>{
+        messages: []
+      };
     }
 
     this.conversation.messages.push(message);
-  }
-
-  ngOnInit() {
-    // Get selected contact via service:
-    this.chatService.getContact().subscribe(contact => {
-      this.contact = contact;
-
-      if (!contact.conversationId) {
-        this.conversation = null;
-        return;
-      }
-
-      this.isLoading = true;
-
-      // Get conversation with selected contact if "conversationId" exists:
-      this.chatService
-        .getConversation(contact.conversationId)
-        .pipe(finalize(() => (this.isLoading = false)))
-        .subscribe(conversation => (this.conversation = conversation));
-    });
   }
 }

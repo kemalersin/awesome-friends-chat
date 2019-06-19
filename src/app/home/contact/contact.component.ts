@@ -1,12 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 
-import { has, includes, lowerCase } from 'lodash';
+import { includes, lowerCase } from 'lodash';
 
 import { IContact } from './contact';
+
 import { ContactService } from './contact.service';
-import { ChatService } from '@home/chat/chat.service';
 import { ProfileService } from '@home/profile/profile.service';
+import { SettingsService } from '@home/settings/settings.service';
 
 @Component({
   selector: 'app-contact',
@@ -17,8 +18,6 @@ export class ContactComponent implements OnInit {
   @Input() inConversation: boolean;
 
   contacts: IContact[];
-
-  selectedContact: IContact;
   filteredContacts: IContact[];
 
   _filter: string;
@@ -35,46 +34,40 @@ export class ContactComponent implements OnInit {
     this.filteredContacts = this._filter ? this.performFilter(this._filter) : this.contacts;
   }
 
+  get selectedContact(): IContact {
+    return this.contactService.selectedContact;
+  }
+
   constructor(
     private contactService: ContactService,
-    private chatService: ChatService,
-    private profileService: ProfileService
+    private profileService: ProfileService,
+    private settingsService: SettingsService
   ) {}
 
   ngOnInit() {
     this.isLoading = true;
 
-    // Get selected contact via service:
-    this.chatService.getContact().subscribe(contact => (this.selectedContact = contact));
+    this.settingsService.offlineModeSubject.subscribe(showOfflineUsers => (this.showOfflineUsers = showOfflineUsers));
 
-    // Getting all contacts from service for conversation and all contacts list:
     this.contactService
-      .getContacts()
+      .getContacts(this.inConversation)
       .pipe(finalize(() => (this.isLoading = false)))
       .subscribe((contacts: IContact[]) => {
         this.contacts = contacts;
-
-        if (this.inConversation) {
-          this.contacts = this.contacts.filter((contact: IContact) => has(contact, 'lastMessage'));
-        }
-
         this.filteredContacts = this.contacts;
       });
-
-    // Watch offline/online contacts display setting and set a flag:
-    this.contactService.getOfflineMode().subscribe(showOfflineUsers => (this.showOfflineUsers = showOfflineUsers));
   }
 
-  // Pass contact to chat service,
-  // then start a conversation with selected contact:
-  public startConversation(contact: IContact): void {
-    this.selectedContact = contact;
-    this.chatService.selectContact(contact);
-  }
-
-  // Filter contacts:
   private performFilter(filterBy: string): IContact[] {
     filterBy = lowerCase(filterBy);
     return this.contacts.filter((contact: IContact) => includes(lowerCase(contact.name), filterBy));
+  }
+
+  public selectContact(contact: IContact) {
+    this.contactService.selectedContact = contact;
+  }
+
+  public showProfile(contact: IContact) {
+    this.profileService.showProfile(contact);
   }
 }

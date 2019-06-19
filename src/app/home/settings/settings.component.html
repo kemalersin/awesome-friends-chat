@@ -6,8 +6,12 @@
       <div ngbDropdown>
         <button id="language-dropdown" ngbDropdownToggle class="btn btn-outline-primary">{{ currentLanguage }}</button>
         <div ngbDropdownMenu aria-labelledby="language-dropdown">
-          <button ngbDropdownItem class="dropdown-item" *ngFor="let language of languages"
-            (click)="setLanguage(language)">
+          <button
+            ngbDropdownItem
+            class="dropdown-item"
+            *ngFor="let language of languages"
+            (click)="setLanguage(language)"
+          >
             {{ language }}
           </button>
         </div>
@@ -29,8 +33,14 @@
   <div class="card mb-3">
     <div class="card-body">
       <div class="custom-control custom-checkbox">
-        <input type="checkbox" id="offlineUsers" name="showOfflineUsers" class="custom-control-input"
-          [(ngModel)]="showOfflineUsers" (ngModelChange)="contactService.changeOfflineMode(showOfflineUsers)" checked />
+        <input
+          type="checkbox"
+          id="offlineUsers"
+          name="showOfflineUsers"
+          class="custom-control-input"
+          [(ngModel)]="offlineMode"
+          checked
+        />
         <label class="custom-control-label" for="offlineUsers">
           <span translate>Show offline users</span>
         </label>

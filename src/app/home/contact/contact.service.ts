@@ -1,14 +1,11 @@
-import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { has } from 'lodash';
 
 import { IContact } from './contact';
 
-/**
- * API GET route for all contacts.
- * @return The route string.
- */
 const routes = {
   contacts: () => '/contacts'
 };
@@ -17,26 +14,28 @@ const routes = {
   providedIn: 'root'
 })
 export class ContactService {
-  @Output() contactEmitter: EventEmitter<boolean> = new EventEmitter();
+  private contact: IContact;
+  public contactSubject = new Subject<IContact>();
 
   constructor(private httpClient: HttpClient) {}
 
-  // Emit passing offline/online contacts displaying mode setting:
-  public changeOfflineMode(showOfflineUsers: boolean) {
-    this.contactEmitter.emit(showOfflineUsers);
+  get selectedContact() {
+    return this.contact;
   }
 
-  public getOfflineMode(): Observable<boolean> {
-    return this.contactEmitter;
+  set selectedContact(contact: IContact) {
+    this.contact = contact;
+    this.contactSubject.next(contact);
   }
 
-  // Load contacts data from API:
-  public getContacts(): Observable<IContact[]> {
+  public getContacts(onlyInConservation?: boolean): Observable<IContact[]> {
     return this.httpClient
       .cache()
       .get(routes.contacts())
       .pipe(
-        map((contacts: any) => contacts),
+        map((contacts: any) =>
+          onlyInConservation ? contacts.filter((contact: IContact) => has(contact, 'lastMessage')) : contacts
+        ),
         catchError(() => of('Could not load contacts.'))
       );
   }

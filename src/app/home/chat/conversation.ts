@@ -1,3 +1,8 @@
+export enum MessageType {
+  Received = 1,
+  Reply
+}
+
 export interface IMessage {
   type: number;
   time: number;
