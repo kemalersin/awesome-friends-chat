@@ -18,8 +18,8 @@ export class SettingsComponent {
 
   constructor(
     private i18nService: I18nService,
-    public contactService: ContactService,
-    public settingsService: SettingsService
+    private contactService: ContactService,
+    private settingsService: SettingsService
   ) {}
 
   // ...................................................................................................
