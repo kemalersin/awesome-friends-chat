@@ -3,7 +3,6 @@
 import { Component } from '@angular/core';
 
 import { I18nService } from '@app/core';
-import { ContactService } from '@home/contact/contact.service';
 import { SettingsService } from './settings.service';
 
 // *****************************************************************************************************
@@ -16,11 +15,7 @@ import { SettingsService } from './settings.service';
 export class SettingsComponent {
   // ...................................................................................................
 
-  constructor(
-    private i18nService: I18nService,
-    private contactService: ContactService,
-    private settingsService: SettingsService
-  ) {}
+  constructor(private i18nService: I18nService, private settingsService: SettingsService) {}
 
   // ...................................................................................................
 
