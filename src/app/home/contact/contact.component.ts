@@ -35,6 +35,14 @@ export class ContactComponent implements OnInit {
 
   // ...................................................................................................
 
+  constructor(
+    private contactService: ContactService,
+    private profileService: ProfileService,
+    private settingsService: SettingsService
+  ) {}
+
+  // ...................................................................................................
+
   get filter() {
     return this._filter;
   }
@@ -51,14 +59,6 @@ export class ContactComponent implements OnInit {
   get selectedContact(): IContact {
     return this.contactService.selectedContact;
   }
-
-  // ...................................................................................................
-
-  constructor(
-    private contactService: ContactService,
-    private profileService: ProfileService,
-    private settingsService: SettingsService
-  ) {}
 
   // ...................................................................................................
 
